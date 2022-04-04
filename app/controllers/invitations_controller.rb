@@ -11,10 +11,12 @@ class InvitationsController < ApplicationController
   def create
     @invitation = Invitation.new(invitation_params)
     @invitation.cycle = Cycle.find(params[:cycle_id])
-    if @invitation.save
-      redirect_to root_path
-    else
-      render :new
+    respond_to do |f|
+      if @invitation.save
+        redirect_to root_path, notice: 'Your invitation has been created successfully'
+      else
+        f.js { render :new, notice: 'Invitation has not been created' }
+      end
     end
   end
 
