@@ -3,8 +3,8 @@ class InvitationsController < ApplicationController
     @invitation = Invitation.new
     @cycle = Cycle.find(params[:cycle_id])
     respond_to do |f|
-      f.html
       f.js
+      f.html
     end
   end
 
