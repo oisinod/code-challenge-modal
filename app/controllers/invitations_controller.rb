@@ -1,7 +1,13 @@
 class InvitationsController < ApplicationController
+  def new
+    @invitation = Invitation.new
+    @cycle = Cycle.find(params[:cycle_id])
+  end
+
   def create
     @invitation = Invitation.new(invitation_params)
   end
+
 
   private
 
