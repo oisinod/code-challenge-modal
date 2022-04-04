@@ -6,6 +6,7 @@ class Invitation < ApplicationRecord
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP, message: 'Please enter a valid email format' }
 
   def format_email
+    return if self.email.nil?
     email_field = Mail::Address.new(self.email)
     self.email = email_field.address   # ex: "john@example.com"
     self.name = email_field.display_name   # ex: "John Doe"

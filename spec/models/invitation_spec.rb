@@ -24,4 +24,25 @@ RSpec.describe Invitation, type: :model do
     invitation.cycle = cycle
     expect(invitation).to be_valid
   end
+
+  it "should return a username if none is provided and the email is given with a '.' " do
+    invitation = Invitation.new(email: "test.username@1234.com")
+    invitation.cycle = cycle
+    invitation.save
+    expect(invitation.name).to eq("Test Username")
+  end
+
+  it "should return a username if none is provided and the email is given with a '.' " do
+    invitation = Invitation.new(email: "test.username@1234.com")
+    invitation.cycle = cycle
+    invitation.save
+    expect(invitation.name).to eq("Test Username")
+  end
+
+  it "takes an email from a format given by the email client" do
+    invitation = Invitation.new(email: "Display name <email.username@doma.in>")
+    invitation.cycle = cycle
+    invitation.save
+    expect(invitation.email).to eq("email.username@doma.in")
+  end
 end
