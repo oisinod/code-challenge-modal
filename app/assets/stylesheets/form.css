@@ -1,0 +1,68 @@
+#new_invitation{
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-email{
+  margin: 0 auto;
+  width: 100%;
+}
+
+input{
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+textarea{
+  width: 100%;
+  border-radius: 5px;
+  font-family: Helvetica;
+}
+
+#invitation_email{
+  border-radius: 10px;
+  padding: 0.2rem;
+  background-color: white;
+  width: 100%;
+}
+
+.form-submit{
+  background-color: #18ffc7;
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  color: black;
+  border-radius: 10px;
+  padding: 0.4rem;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+input{
+  all:unset;
+}
+
+.invitation_message{
+  padding: 10px 0px;
+  border-bottom: 1px solid white;
+}
+
+.form-cycle-confirmation{
+  padding: 10px 0px;
+  border-bottom: 1px solid white;
+  font-size: 12px;
+}
+
+.invitation_email{
+  padding: 12px 0px;
+  border-bottom: 1px solid white;
+}
+
+ul{
+  margin: 0;
+}
+
+div.input > label{
+  margin-bottom: 5px;
+}

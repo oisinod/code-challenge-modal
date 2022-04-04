@@ -1,5 +1,12 @@
 <%= simple_form_for([@cycle, invitation]) do |f| %>
-  <%= f.input :email %>
-  <%= f.input :message %>
-  <%= f.submit %>
+  <%= f.input :email, label: "Share cycle with new Customer", placeholder: 'Email Addresses... *', wrapper_html: {class:'form-email'} %>
+  <%= f.input :message, label: "Want to include a message with the invite?", placeholder: 'Please enter your message....', wrapper_html: {class:'form-message'} %>
+  <div class="form-cycle-confirmation">
+  You are about to share with the individuals above:
+    <ul>
+      <li><%= @cycle.name %></li>
+    </ul>
+  </div>
+  <%= f.submit 'SEND INVITATION', class:'form-submit' %>
+
 <% end %>
